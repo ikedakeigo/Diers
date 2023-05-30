@@ -1,13 +1,26 @@
 const gulp = require('gulp');
-const sass = require('gulp-sass');
+const browserSync = require('browser-sync').create();
+const sass = require('gulp-sass')(require('sass'));
 
 gulp.task('sass', function () {
-  return gulp.src('./scss/**/*.scss')
-    .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
-    .pipe(gulp.dest('./css'));
+  return gulp.src('./assets/sass/*.scss') // パスを修正
+    .pipe(sass())
+    .pipe(gulp.dest('./assets/css')) // パスを修正
+    .pipe(browserSync.stream());
 });
 
-gulp.task('watch', function () {
-  gulp.watch('./scss/**/*.scss', gulp.series('sass'));
+gulp.task('serve', function () {
+  browserSync.init({
+    server: {
+      baseDir: './'
+    }
+  });
+
+  gulp.watch('./**/*.html').on('change', browserSync.reload);
+  gulp.watch('./**/*.css').on('change', browserSync.reload);
+  gulp.watch('./**/*.js').on('change', browserSync.reload);
+
+  gulp.watch('./assets/sass/*.scss', gulp.series('sass')); // パスを修正
 });
 
+gulp.task('default', gulp.series('sass', 'serve'));
