@@ -92,6 +92,98 @@ section{
   }
 }
 
+.sec-ttl{
+  font-weight: bold;
+  font-stretch: normal;
+  font-size: 70px;
+  line-height: 1.43;
+  letter-spacing: 7px;
+  text-align: justify;
+  color: #fff;
+}
+.sec-ttl1{
+  display: block;
+  font-size: 3rem;
+  line-height: 1;
+  color: $white-color;
+  letter-spacing: .3rem;
+}
+
+.sec-ttl2{
+    display: block;
+    font-size: 1.6rem;
+    color: $gold-color;
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+/*===================================
+ * pagination
+===================================*/
+
+.pagination {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.pagination ul {
+  list-style: none;
+  padding: 0;
+}
+
+.page-item {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.page-item a {
+  display: block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  background-color: #f5f5f5;
+  color: #333;
+  text-align: center;
+  text-decoration: none;
+}
+
+/*===================================
+ * パンくず
+===================================*/
+.breadcrumbs_inner{
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.breadcrumbs {
+  margin: 10px 0;
+  margin-top: 50px;
+  font-size: 14px;
+}
+
+.breadcrumbs ul {
+  list-style: none;
+  padding: 0;
+}
+
+.breadcrumbs li {
+  display: inline;
+}
+
+.breadcrumbs li a {
+  color: #666;
+  text-decoration: none;
+}
+
+.breadcrumbs li::after {
+  content: ">";
+  margin: 0 5px;
+}
+
+.breadcrumbs li:last-child::after {
+  content: "";
+}
+
 /*===================================
  * header
 ===================================*/
