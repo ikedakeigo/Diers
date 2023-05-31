@@ -1,0 +1,88 @@
+/*===================================
+ * color
+===================================*/
+#menu-mainvisual {
+  position: relative;
+}
+#menu-mainvisual img {
+  height: 60vh;
+  width: 100%;
+  object-fit: cover;
+  vertical-align: top;
+}
+#menu-mainvisual .sec-ttl {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.sec-ttl {
+  font-weight: bold;
+  font-stretch: normal;
+  font-size: 70px;
+  line-height: 1.43;
+  letter-spacing: 7px;
+  text-align: justify;
+  color: #fff;
+}
+
+.sec-ttl1 {
+  display: block;
+  font-size: 3rem;
+  line-height: 1;
+  color: #fff;
+  letter-spacing: 0.3rem;
+}
+
+.sec-ttl2 {
+  display: block;
+  font-size: 1.6rem;
+  color: #bfab6f;
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+.menu__bg {
+  background-color: #f5f5f5;
+}
+
+.menu__bg-inner {
+  padding-top: 30px;
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+}
+
+.menu-list {
+  text-align: right;
+}
+
+.menu-list small {
+  font-size: 10px;
+}
+
+.ather__menuTitle {
+  margin-top: 52px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #26a6a6;
+  border-radius: 10px;
+}
+.ather__menuTitle h3 {
+  font-family: "Noto Sans JP";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 42px;
+  color: #fff;
+}
+
+.elementary {
+  color: #fff;
+  gap: 10px;
+  margin: 0 0 10px;
+  padding: 10px 9px;
+  border-radius: 30px;
+  background-color: #E3B125;
+}

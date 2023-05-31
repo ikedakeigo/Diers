@@ -1,0 +1,119 @@
+//マップ型変数breakpointsを定義
+$breakpoints: (
+//キー 値
+// 'xxs': 'screen and (max-width: 328px)',
+'xs': 'screen and (max-width: 599px)',
+'sm': 'screen and (max-width: 960px)', //960px以下（スマホ）用の表示
+'md': 'screen and (min-width: 961px)', //961px以上（タブレット・PC）用の表示
+) !default;
+
+//メディアクエリ用のmixinを定義。デフォ値はmd
+@mixin mq($breakpoint: sp) {
+//map-get(マップ型変数, キー)で値を取得
+  @media #{map-get($breakpoints, $breakpoint)} {
+    //この中をカスタムできる
+    @content;
+  }
+}
+
+/*===================================
+ * color
+===================================*/
+$main-color: #186a6a;
+$sub-color: #26a6a6;
+$btn-color: #011640;
+$block-color: #222222;
+$white-color: #fff;
+$gold-color: #bfab6f;
+$bg-color: #f5f5f5;
+
+
+#menu-mainvisual{
+  position: relative;
+  & img {
+    height: 60vh;
+    width: 100%;
+    object-fit: cover;
+    vertical-align: top;
+  }
+  & .sec-ttl {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}
+
+.sec-ttl{
+  font-weight: bold;
+  font-stretch: normal;
+  font-size: 70px;
+  line-height: 1.43;
+  letter-spacing: 7px;
+  text-align: justify;
+  color: #fff;
+}
+.sec-ttl1{
+  display: block;
+  font-size: 3rem;
+  line-height: 1;
+  color: $white-color;
+  letter-spacing: .3rem;
+}
+
+.sec-ttl2{
+    display: block;
+    font-size: 1.6rem;
+    color: $gold-color;
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+.menu__bg{
+  background-color: $bg-color;
+}
+
+.menu__bg-inner{
+  padding-top: 30px;
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+}
+
+.menu-list{
+  text-align: right;
+}
+.menu-list small {
+  font-size: 10px;
+}
+
+.ather__menuTitle{
+  margin-top: 52px;
+
+  & h3{
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 42px;
+    color: $white-color;
+  }
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: $sub-color;
+  border-radius: 10px;
+}
+
+.elementary{
+  color: $white-color;
+  gap: 10px;
+  margin: 0 0 10px;
+  padding: 10px 9px;
+  border-radius: 30px;
+  background-color: #E3B125;
+
+  // &.men{
+  //   color: $white-color;
+  //   background-color: $main-color;
+  // }
+}
