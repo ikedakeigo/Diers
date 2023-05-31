@@ -3,8 +3,8 @@ $breakpoints: (
 //キー 値
 // 'xxs': 'screen and (max-width: 328px)',
 'xs': 'screen and (max-width: 599px)',
-'sm': 'screen and (max-width: 767px)', //767px以下（スマホ）用の表示
-'md': 'screen and (min-width: 768px)', //768px以上（タブレット・PC）用の表示
+'sm': 'screen and (max-width: 960px)', //960px以下（スマホ）用の表示
+'md': 'screen and (min-width: 961px)', //961px以上（タブレット・PC）用の表示
 ) !default;
 
 //メディアクエリ用のmixinを定義。デフォ値はmd
@@ -24,6 +24,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 
@@ -53,6 +54,8 @@ a{
   text-decoration: none;
   color: #fff;
 }
+
+
 .inner{
   max-width: 1300px;
   margin: 0 auto;
@@ -91,6 +94,13 @@ section{
  * header
 ===================================*/
 
+#navPC{
+  display: none;
+  @include mq(md){
+    display: block;
+  }
+}
+
 .header{
   width: 100%;
   height: 115px;
@@ -106,15 +116,13 @@ section{
   }
 }
 
-.pc-header{
-  display: none;
-  @include mq(md){
-    display: block;
-  }
-}
 
 .logo-title{
-
+  & img {
+    @include mq(sm){
+      width: 10rem;
+    }
+  }
 }
 
 // ナビゲーションバー
@@ -192,6 +200,7 @@ section{
   background-image: url(../img/mainvisual.jpg);
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
   width: 100%;
   height: 59vh;
   position: relative;
@@ -202,6 +211,11 @@ section{
   top: 50%;
   right: 20%;
   transform: translate(0, -50%);
+  @include mq(sm){
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+  }
 
   & h2 {
     position: relative;
@@ -260,6 +274,10 @@ section{
     padding-top: 80px;
     padding-bottom: 80px;
     text-align: center;
+    @include mq(sm){
+      padding-left: 20px;
+      padding-right: 20px;
+    }
     & .main-title{
       margin-bottom: 80px;
     }
@@ -274,6 +292,7 @@ section{
       display: flex;
       justify-content: space-evenly;
       flex-wrap: wrap;
+
       &:not(:first-child){
         padding-top: 60px;
       }
@@ -281,8 +300,15 @@ section{
 
     &-item{
       position: relative;
-      width: 30%;
-      box-shadow: 8px 9px 4px 0 rgba(0, 0, 0, 0.25);
+      @include mq(sm){
+        &:not(:first-child){
+          margin-top: 60px;
+        }
+      }
+      & img {
+        box-shadow: 8px 9px 4px 0 rgba(0, 0, 0, 0.25);
+        width: 100%;
+      }
     }
   }
 }
@@ -303,6 +329,7 @@ section{
     padding-right: 20px;
     font-weight: 800;
   }
+
 }
 
 
@@ -327,6 +354,9 @@ section{
   & .inner {
     margin-top: 120px;
     text-align: center;
+    @include mq(sm){
+      margin-top: 80px;
+    }
   }
 
   &__title{
@@ -343,7 +373,6 @@ section{
       left: 50%;
       bottom: 0;
       transform: translateX(-50%);
-      // display: block;
       width:  100%;
       border-bottom: #bfab6f 2px dotted;
     }
@@ -366,9 +395,19 @@ section{
     display: flex;
     justify-content: space-between;
     margin-top: 36px;
+
+    @include mq(sm){
+      display: block;
+    }
     &-item {
       width: 48%;
       text-align: center;
+      @include mq(sm){
+        width: 100%;
+        &:not(:first-child){
+          margin-top: 36px;
+        }
+      }
     }
 
   }
@@ -387,7 +426,9 @@ section{
     background-color: $sub-color;
     padding: 0 25px;
     border-radius: 30px;
-
+    @include mq(sm){
+      width: 20%;
+    }
   }
 }
 
@@ -398,6 +439,13 @@ section{
     padding: 10px 30px 10px;
     display: flex;
     justify-content: space-between;
+
+    @include mq(sm){
+      &:last-child{
+        border-bottom: none;
+      }
+    }
+
     & small {
       display: contents;
       font-size: 10px;
@@ -498,7 +546,7 @@ section{
   margin-top: 20px;
   background: $main-color;
   color: #fff;
-  width: 300px;
+  // width: 300px;
   padding: 18px 38px;
   border-radius: 10px;
 }
@@ -536,6 +584,14 @@ section{
       width: calc(100% / 5);
       padding: 20px;
       margin-bottom: 20px;
+
+      @include mq(sm){
+        width: 40%;
+        &:nth-child(n + 3){
+          margin-top: 72px;
+        }
+      }
+
       &:nth-child(n + 5){
         margin-top: 72px;
       }
@@ -594,13 +650,24 @@ section{
     padding: 40px;
       &-item{
         display: flex;
+
+        @include mq(sm){
+          img {
+            width: 100%;
+          }
+          display: block;
+        }
       }
   }
 
   &__desc{
     margin-left: 40px;
-    // margin-right: 40px;
-    // margin-top: 40px;
+
+    @include mq(sm){
+      margin-left: 0;
+      margin-top: 20px;
+      text-align: center;
+    }
 
     & h4 {
       color: $main-color;
@@ -660,6 +727,9 @@ section{
       margin: 0 auto;
       text-align: justify;
       display: flex;
+      @include mq(sm){
+        width: 100%;
+      }
       & a {
         color: $block-color;
         font-family: 'Noto Sans JP';
@@ -725,10 +795,20 @@ section{
     justify-content: space-around;
     align-items: flex-start;
     margin-bottom: 30px;
+    @include mq(sm){
+      display: block;
+    }
   }
   .footer-item{
     width: 30%;
     text-align: left;
+    @include mq(sm){
+      width: 100%;
+      text-align: center;
+      &:not(:first-child){
+        margin-top: 30px;
+      }
+    }
   }
   .footer-item p {
     margin-bottom: 30px;

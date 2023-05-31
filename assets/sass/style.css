@@ -6,6 +6,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  font-family: "Courier New", Courier, monospace;
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
@@ -60,6 +61,15 @@ section {
 /*===================================
  * header
 ===================================*/
+#navPC {
+  display: none;
+}
+@media screen and (min-width: 961px) {
+  #navPC {
+    display: block;
+  }
+}
+
 .header {
   width: 100%;
   height: 115px;
@@ -75,12 +85,9 @@ section {
   padding-bottom: 35px;
 }
 
-.pc-header {
-  display: none;
-}
-@media screen and (min-width: 768px) {
-  .pc-header {
-    display: block;
+@media screen and (max-width: 960px) {
+  .logo-title img {
+    width: 10rem;
   }
 }
 
@@ -149,6 +156,7 @@ section {
   background-image: url(../img/mainvisual.jpg);
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
   width: 100%;
   height: 59vh;
   position: relative;
@@ -159,6 +167,13 @@ section {
   top: 50%;
   right: 20%;
   transform: translate(0, -50%);
+}
+@media screen and (max-width: 960px) {
+  .cachcopy {
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+  }
 }
 .cachcopy h2 {
   position: relative;
@@ -203,6 +218,12 @@ section {
   padding-bottom: 80px;
   text-align: center;
 }
+@media screen and (max-width: 960px) {
+  .concept__text {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
 .concept__text .main-title {
   margin-bottom: 80px;
 }
@@ -222,8 +243,15 @@ section {
 }
 .concept__image-item {
   position: relative;
-  width: 30%;
+}
+@media screen and (max-width: 960px) {
+  .concept__image-item:not(:first-child) {
+    margin-top: 60px;
+  }
+}
+.concept__image-item img {
   box-shadow: 8px 9px 4px 0 rgba(0, 0, 0, 0.25);
+  width: 100%;
 }
 
 .image__desc {
@@ -260,6 +288,11 @@ section {
   margin-top: 120px;
   text-align: center;
 }
+@media screen and (max-width: 960px) {
+  .menu .inner {
+    margin-top: 80px;
+  }
+}
 .menu__title {
   text-align: center;
   font-size: 26px;
@@ -295,9 +328,22 @@ section {
   justify-content: space-between;
   margin-top: 36px;
 }
+@media screen and (max-width: 960px) {
+  .menu__contents {
+    display: block;
+  }
+}
 .menu__contents-item {
   width: 48%;
   text-align: center;
+}
+@media screen and (max-width: 960px) {
+  .menu__contents-item {
+    width: 100%;
+  }
+  .menu__contents-item:not(:first-child) {
+    margin-top: 36px;
+  }
 }
 .menu__desc {
   text-align: center;
@@ -313,12 +359,22 @@ section {
   padding: 0 25px;
   border-radius: 30px;
 }
+@media screen and (max-width: 960px) {
+  .menu__desc {
+    width: 20%;
+  }
+}
 
 .menu-list__item {
   border-bottom: 1px dotted #333;
   padding: 10px 30px 10px;
   display: flex;
   justify-content: space-between;
+}
+@media screen and (max-width: 960px) {
+  .menu-list__item:last-child {
+    border-bottom: none;
+  }
 }
 .menu-list__item small {
   display: contents;
@@ -406,7 +462,6 @@ section {
   margin-top: 20px;
   background: #186a6a;
   color: #fff;
-  width: 300px;
   padding: 18px 38px;
   border-radius: 10px;
 }
@@ -441,6 +496,14 @@ section {
   width: 20%;
   padding: 20px;
   margin-bottom: 20px;
+}
+@media screen and (max-width: 960px) {
+  .review__box-item {
+    width: 40%;
+  }
+  .review__box-item:nth-child(n+3) {
+    margin-top: 72px;
+  }
 }
 .review__box-item:nth-child(n+5) {
   margin-top: 72px;
@@ -496,8 +559,23 @@ section {
 .stylist__box-item {
   display: flex;
 }
+@media screen and (max-width: 960px) {
+  .stylist__box-item {
+    display: block;
+  }
+  .stylist__box-item img {
+    width: 100%;
+  }
+}
 .stylist__desc {
   margin-left: 40px;
+}
+@media screen and (max-width: 960px) {
+  .stylist__desc {
+    margin-left: 0;
+    margin-top: 20px;
+    text-align: center;
+  }
 }
 .stylist__desc h4 {
   color: #186a6a;
@@ -545,6 +623,11 @@ section {
   margin: 0 auto;
   text-align: justify;
   display: flex;
+}
+@media screen and (max-width: 960px) {
+  .news__list-item {
+    width: 100%;
+  }
 }
 .news__list-item a {
   color: #222222;
@@ -604,8 +687,23 @@ section {
   align-items: flex-start;
   margin-bottom: 30px;
 }
+@media screen and (max-width: 960px) {
+  .footer .footer-box {
+    display: block;
+  }
+}
 .footer .footer-item {
   width: 30%;
+  text-align: left;
+}
+@media screen and (max-width: 960px) {
+  .footer .footer-item {
+    width: 100%;
+    text-align: center;
+  }
+  .footer .footer-item:not(:first-child) {
+    margin-top: 30px;
+  }
 }
 .footer .footer-item p {
   margin-bottom: 30px;
