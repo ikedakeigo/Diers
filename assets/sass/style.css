@@ -54,6 +54,11 @@ a {
   background-color: #bfab6f;
 }
 
+h2 {
+  font-weight: bold;
+  text-align: center;
+}
+
 section:not(:first-child) {
   padding: 100px 0;
 }
