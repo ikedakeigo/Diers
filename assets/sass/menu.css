@@ -50,12 +50,16 @@
 }
 
 .menu__bg-inner {
-  padding-top: 30px;
-  padding-bottom: 50px;
-  margin-bottom: 50px;
+  padding-top: 80px;
+  padding-bottom: 170px;
+  margin-bottom: 130px;
 }
 
-.menu-l .menu-list small {
+.menu-list {
+  text-align: right;
+}
+
+.menu-list small {
   font-size: 10px;
 }
 
