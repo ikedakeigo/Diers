@@ -54,7 +54,7 @@ a {
   background-color: #bfab6f;
 }
 
-section {
+section:not(:first-child) {
   padding: 100px 0;
 }
 
