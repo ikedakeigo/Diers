@@ -345,11 +345,16 @@ section {
     margin-top: 36px;
   }
 }
+.menu__descRE {
+  position: relative;
+  margin-top: 30px;
+}
 .menu__desc {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
-  width: 15%;
-  margin: 65px auto;
-  margin-bottom: 0;
   font-style: normal;
   font-weight: 700;
   font-size: 12px;
@@ -358,11 +363,6 @@ section {
   background-color: #26a6a6;
   padding: 0 25px;
   border-radius: 30px;
-}
-@media screen and (max-width: 960px) {
-  .menu__desc {
-    width: 20%;
-  }
 }
 
 .menu-list__item {
@@ -466,6 +466,10 @@ section {
   border-radius: 10px;
 }
 
+.menu .menuBtn {
+  margin-top: 50px;
+}
+
 /*===================================
  * review
 ===================================*/
@@ -497,6 +501,11 @@ section {
   padding: 20px;
   margin-bottom: 20px;
 }
+@media screen and (min-width: 961px) {
+  .review__box-item:nth-child(n+5) {
+    margin-top: 72px;
+  }
+}
 @media screen and (max-width: 960px) {
   .review__box-item {
     width: 40%;
@@ -505,8 +514,13 @@ section {
     margin-top: 72px;
   }
 }
-.review__box-item:nth-child(n+5) {
-  margin-top: 72px;
+@media screen and (max-width: 599px) {
+  .review__box-item {
+    width: 100%;
+  }
+  .review__box-item:nth-child(n+2) {
+    margin-top: 30px;
+  }
 }
 .review__box-item h4 {
   font-family: "Roboto";
