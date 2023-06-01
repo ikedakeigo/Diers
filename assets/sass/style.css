@@ -226,6 +226,27 @@ section:not(:first-child) {
   transform: translate(0, 0);
 }
 
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
 /*===================================
  * ページトップ
 ===================================*/
