@@ -235,6 +235,30 @@ section{
   display: none;
 }
 
+.mv_slideHeght {
+  transition: transform 5s ease-in-out;
+}
+
+.mv_slideHeght:hover {
+  transform: scale(1.2);
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(1.0);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+.zoom {
+  animation-name: zoom;
+  animation-duration: 10s; /* 適宜調整してください */
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
 /*===================================
 # fadeInUp
 ===================================*/
@@ -270,12 +294,12 @@ section{
  * ページトップ
 ===================================*/
 #pageTop{
-  width: 60px;
+  // width: 70px;
   height: 60px;
   position: fixed;
   right: 10px;
   bottom: 10px;
-  background: #000;
+  // background: #000;
   opacity: 0.6;
   z-index: 9999;
 }
