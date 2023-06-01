@@ -29,13 +29,35 @@ slider.slick({
   cssEase: "linear",
 });
 
-// $(".full-screen").slick({
-//   centerMode: true,
-//   centerPadding: "5%",
-//   dots: true,
-//   autoplay: true,
-//   autoplaySpeed: 2800,
-//   infinite: true,
-//   pauseOnFocus: false,
-//   pauseOnHover: false,
-// });
+// ページトップへ戻るボタンの設定
+$(function() {
+  var topBtn = $('#pageTop');
+  topBtn.hide();
+  //スクロールが100に達したらボタン表示
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 100) {
+      topBtn.fadeIn();
+    } else {
+      topBtn.fadeOut();
+    }
+  });
+  //スクロールしてトップ
+  topBtn.click(function () {
+    $('body,html').animate({
+      scrollTop: 0
+    }, 500);
+    return false;
+  });
+}
+);
+
+
+// スクロールアニメーション
+$('.inviewfadeInUp').on('inview', function (event, isInView) {
+  if (isInView) {
+    $(this).stop().addClass('fadeInUp');
+  } else {
+    //$(this).stop().removeClass('fadeInUp');
+    $(this).stop().removeClass('');
+  }
+});

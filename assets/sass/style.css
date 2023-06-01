@@ -208,6 +208,39 @@ section:not(:first-child) {
 }
 
 /*===================================
+# fadeInUp
+===================================*/
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+          animation-name: fadeInUp;
+}
+
+.inviewfadeInUp {
+  opacity: 0;
+  transform: translate(0, 40px);
+  transition: 1.5s;
+}
+
+.fadeInUp {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/*===================================
+ * ページトップ
+===================================*/
+#pageTop {
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  background: #000;
+  opacity: 0.6;
+  z-index: 9999;
+}
+
+/*===================================
  * header
 ===================================*/
 #navPC {
